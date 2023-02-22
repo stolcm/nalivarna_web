@@ -7,30 +7,33 @@ import { Form, Button } from 'semantic-ui-react';
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 
-const options = [
-     { value: '1', label: 'Apple'},
-     { value: '2', label: 'Ball'},
-     { value: '3', label: 'Cat'},
-    ];
-    
-    const default_value = 1; 
+const selectOptions = [
+  { value: "student", label: "Student" },
+  { value: "developer", label: "Developer" },
+  { value: "manager", label: "Manager" }
+];
+
+const registerOptions = {
+  // ...
+  role: { required: "Role is required" }
+};
 
 export default function App() {
 
     const onSubmit = (data) => {
 	  console.log(data);
-          axios.post('https://formsubmit.co/aj/stolcml@gmail.com', data)
+          axios.post('https://formsubmit.co/aja/stolcml@gmail.com', data)
     .then(response => { alert('ozveme se'); 
     
   window.scrollTo(0, 0);
   reset()
 })
-   .catch(response=> console.log(response))
+   .catch(response=> {console.log(data); alert('neozveme se'); })
     
 
 	}    
     const methods = useForm();
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, control, handleSubmit, reset, formState: { errors } } = useForm();
     return (
         <div>
             <Form onSubmit={handleSubmit(onSubmit)}>
@@ -78,7 +81,15 @@ export default function App() {
 		
 		    <div className="form mb-3"> 
                     
-		    
+		     <Controller
+      name="role"
+      control={control}
+      defaultValue=""
+      rules={registerOptions.role}
+      render={({ field }) => (
+        <Select options={selectOptions} {...field} label="Text field" />
+      )}
+    />
 
                     </div>
                 
