@@ -3,26 +3,33 @@ import './App.css';
 import axios from "axios";
 
 import React from 'react';
-import { Form, Button } from 'semantic-ui-react';
+import { Form, Button} from 'semantic-ui-react';
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 
+function myFunction() {
+  document.getElementById("sel").style.borderColor = "green";
+}
+
 const selectOptions = [
-  { value: "student", label: "Student" },
-  { value: "developer", label: "Developer" },
-  { value: "manager", label: "Manager" }
+  { value: "vse", label: "VŠE" },
+  { value: "czu", label: "ČZU" },
+  { value: "cvut", label: "ČVUT" },
+  { value: "mffUk", label: "MFF UK"}
 ];
 
-const registerOptions = {
-  // ...
-  role: { required: "Role is required" }
-};
+
 
 export default function App() {
 
     const onSubmit = (data) => {
-	  console.log(data);
-          axios.post('https://formsubmit.co/aja/stolcml@gmail.com', data)
+	  
+          axios.post('https://formsubmit.co/aja/stolcml@gmail.com', 
+	{"name":data.name,
+	 "email":data.email,
+	 "phone":data.phone,
+	 "aboutMe":data.aboutMe,
+	 "choice":data.choice.label})
     .then(response => { alert('ozveme se'); 
     
   window.scrollTo(0, 0);
@@ -47,7 +54,7 @@ export default function App() {
 		    <label >Jméno a příjmení</label>
 		    </div>
                 </Form.Field>
-		{errors.name && <p style={{color:"red"}}>Please check the First Name</p>}
+		{errors.name && <p style={{color:"red"}}>Pole Jméno a příjmení je požadováno</p>}
                 <Form.Field>
 		    <div className="form-floating mb-3">                    
                     <input
@@ -60,7 +67,7 @@ export default function App() {
 		    <label>Email</label>
 		    </div>
                 </Form.Field>
-		{errors.email && <p style={{color:"red"}}>Please check the Email</p>}
+		{errors.email && <p style={{color:"red"}}>Pole Email je požadováno</p>}
                 <Form.Field>
 		    <div className="form-floating mb-3">                    
                     <input
@@ -79,19 +86,65 @@ export default function App() {
 		    </div>
                 </Form.Field>
 		
-		    <div className="form mb-3"> 
-                    
+		    
+                  {/* <Form.Field> 
+                   <div className="form-floating mb-3"> 
 		     <Controller
-      name="role"
+      name="choice"
       control={control}
-      defaultValue=""
-      rules={registerOptions.role}
+      className="form-control"
+      rules={{ required: true }} 
       render={({ field }) => (
-        <Select options={selectOptions} {...field} label="Text field" />
+        
+        
+        <Select id="sel" options={selectOptions} {...field} onClick="myFunction()" styles={{
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+        
+    border: '1px solid grey',
+    boxShadow: 'none',
+    
+    '&:hover':{border: '1px solid grey',},
+    '&:active':{border: '1px solid red',},
+    
+      
+    }),
+  }} label="Single select" />
+        
+       
       )}
     />
+    </div>
+    </Form.Field>
+{errors.choice && <p style={{color:"red"}}>Pole Vybrat školu je požadováno</p>}*/}
 
-                    </div>
+<Form.Field>
+<div className="form mb-3">  
+<select className="form-select" style={{fontSize:"1.4em"}}  {...register('choice', { required: true})}>
+  <option value = "" disabled selected> Vybrat školu </option>
+  <option value="VŠE">VŠE</option>
+  <option value="ČZU">ČZU</option>
+  <option value="ČVUT">ČVUT</option>
+  <option value="MFF UK">MFF UK</option>
+</select>
+</div>
+</Form.Field>
+  {errors.choice && <p style={{color:"red"}}>Pole Vybrat školu je požadováno</p>}       
+
+<Form.Field>
+<div className="form-floating mb-3"> 
+	<div style={{display:"inline"}}><input
+              type="checkbox"
+              name="selectCheckbox"
+              id="selectCheckbox"
+              {...register('checkBox', { required: true})}
+              
+            /> <label>Souhlasím s <a href='index2.html'>Zásady ochrany osobních údajů</a></label></div>
+</div>
+</Form.Field>
+  {errors.checkBox && <p style={{color:"red"}}>Pole Souhlasím s Zásady ochrany osobních údajů je požadováno</p>}  
+
+        
                 
                 
                 <Button className="btn btn-primary btn-xl justify-center"  type="submit">Odeslat</Button>
