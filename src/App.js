@@ -139,7 +139,7 @@ export default function App() {
               id="selectCheckbox"
               {...register('checkBox', { required: true})}
               
-            /> <label>Souhlasím s <a href='index2.html'>Zásady ochrany osobních údajů</a></label></div>
+            /> <label>Souhlasím s <a data-bs-toggle="modal" href="#portfolioModal7">Zásady ochrany osobních údajů</a></label></div>
 </div>
 </Form.Field>
   {errors.checkBox && <p style={{color:"red"}}>Pole Souhlasím s Zásady ochrany osobních údajů je požadováno</p>}  
