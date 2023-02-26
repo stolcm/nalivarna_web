@@ -17,7 +17,7 @@ const selectOptions = [
 
 
 export default function App() {
-
+    {/*console.log(data);*/} 
     const onSubmit = (data) => {
 	  
           axios.post('https://formsubmit.co/aja/stolcml@gmail.com', 
@@ -26,12 +26,12 @@ export default function App() {
 	 "phone":data.phone,
 	 "aboutMe":data.aboutMe,
 	 "choice":data.choice.label})
-    .then(response => { alert('ozveme se'); 
+    .then(response => { alert('Děkujeme! Brzy se vám ozveme!'); 
     
   window.scrollTo(0, 0);
   reset()
 })
-   .catch(response=> {console.log(data); alert('neozveme se'); })
+   .catch(response=> {alert('Je nám to líto! Něco se pokazilo! Zkuste to znovu.'); })
     
 
 	}    
@@ -129,13 +129,14 @@ export default function App() {
 
 <Form.Field>
 <div className="form-floating mb-3"> 
-	<div style={{display:"inline"}}><input
+	<p><input
               type="checkbox"
               name="selectCheckbox"
               id="selectCheckbox"
               {...register('checkBox', { required: true})}
               
-            /> <label>Souhlasím s <a data-bs-toggle="modal" href="#portfolioModal7">Zásady ochrany osobních údajů</a></label></div>
+            /> <label>Souhlasím s</label> <label><a data-bs-toggle="modal" href="#portfolioModal7">Zásady ochrany osobních údajů</a></label></p>
+
 </div>
 </Form.Field>
   {errors.checkBox && <p style={{color:"red"}}>Pole Souhlasím s Zásady ochrany osobních údajů je požadováno</p>}  
