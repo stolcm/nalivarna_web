@@ -120,6 +120,7 @@ export default function App() {
   <option value = "" disabled selected> Vybrat školu<span className="required">*</span></option>
   <option value="VŠE">VŠE</option>
   <option value="ČZU">ČZU</option>
+  <option value="VŠCHT">VŠCHT</option>
   <option value="ČVUT">ČVUT</option>
   <option value="MFF UK">MFF UK</option>
 </select>
