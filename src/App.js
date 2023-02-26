@@ -47,7 +47,7 @@ export default function App() {
                         type="text" placeholder="Enter your name..."
                         {...register("name", { required: true})}
                     />
-		    <label >Jméno a příjmení</label>
+		    <label >Jméno a příjmení<span className="required">*</span></label>
 		    </div>
                 </Form.Field>
 		{errors.name && <p style={{color:"red"}}>Pole Jméno a příjmení je požadováno</p>}
@@ -60,7 +60,7 @@ export default function App() {
                                 pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                             })}
                     />
-		    <label>Email</label>
+		    <label>Email<span className="required">*</span></label>
 		    </div>
                 </Form.Field>
 		{errors.email && <p style={{color:"red"}}>Pole Email je požadováno</p>}
@@ -117,7 +117,7 @@ export default function App() {
 <Form.Field>
 <div className="form mb-3">  
 <select className="form-select" style={{fontSize:"1.4em"}}  {...register('choice', { required: true})}>
-  <option value = "" disabled selected> Vybrat školu </option>
+  <option value = "" disabled selected> Vybrat školu<span className="required">*</span></option>
   <option value="VŠE">VŠE</option>
   <option value="ČZU">ČZU</option>
   <option value="ČVUT">ČVUT</option>
@@ -135,7 +135,7 @@ export default function App() {
               id="selectCheckbox"
               {...register('checkBox', { required: true})}
               
-            /> <label>Souhlasím s</label> <label><a data-bs-toggle="modal" href="#portfolioModal7">Zásady ochrany osobních údajů</a></label></p>
+            /> <label>Souhlasím s</label> <label><a data-bs-toggle="modal" href="#portfolioModal7">Zásady ochrany osobních údajů</a><span className="required">*</span></label></p>
 
 </div>
 </Form.Field>
