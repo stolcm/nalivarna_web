@@ -1,15 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
-
 import React from 'react';
 import { Form, Button} from 'semantic-ui-react';
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 
-function myFunction() {
-  document.getElementById("sel").style.borderColor = "green";
-}
 
 const selectOptions = [
   { value: "vse", label: "VŠE" },
@@ -97,7 +93,7 @@ export default function App() {
       render={({ field }) => (
         
         
-        <Select id="sel" options={selectOptions} {...field} onClick="myFunction()" styles={{
+        <Select id="sel" options={selectOptions} {...field} styles={{
     control: (baseStyles, state) => ({
       ...baseStyles,
         
