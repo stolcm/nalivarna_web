@@ -1,3 +1,14 @@
+div.left {
+  box-sizing: border-box; /* <------- required */
+  width: 40px; /* <------------------- required */
+  float: left; /* <------------------ required */
+}
+
+div.right {
+  overflow: hidden; /* <------------- required */
+}
+
+
 @charset "UTF-8";
 /*!
 * Start Bootstrap - Freelancer v7.0.6 (https://startbootstrap.com/theme/freelancer)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">f
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -470,25 +470,233 @@
 	<!--GDPR-->
 	<div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" aria-labelledby="portfolioModal7" aria-hidden="true">
             <div class="modal-dialog modal-xl">
-                <div class="modal-content" style="background-color:#D0D0D0">
+                <!--<div class="modal-content" style="background-color:#D0D0D0">-->
+                <div class="modal-content" style="background-color:white">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
                     <div class="modal-body text-center pb-5">
                         <div class="container" >
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
+
+
+
+
+
+
+                                    
                                     <!--<h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Zásady ochrany osobních údajů</h2>-->
                                     <h2 class=" text-secondary text-uppercase mb-0">Zásady ochrany osobních údajů</h2>
-                                    <!-- Icon Divider-->
+                                    <!--
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image-->
+                                   
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
+                                    
                                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+-->
+<div class="container fluid" style="text-align:center; margin-left: auto;
+    margin-right: auto; padding-top:60px; padding-bottom:60px; max-width:1500px; width:90%">
+
+  <h5 class="lead"><strong>{{'policy.title'|translate}}</strong></h5>
+  <br>
+  <h5 class="lead">{{'policy.subtitle'|translate}} <a href="assets/img/1tyzden.pdf">example</a></h5>
+  <br>
+  <div *ngFor="let intro of 'policy.intro'|translate">
+    <h5 class="lead" style="text-align:justify;">{{intro.intro_txt}}</h5>
+    <br>
+  </div>
+
+  <h5 ><strong>{{'policy.safety'|translate}}</strong></h5>
+  <h5 ><strong>{{'policy.basics'|translate}}</strong></h5>
+  <br>
+  <h5><strong>I.</strong></h5>
+  <h5><strong>{{'policy.section1_title'|translate}}</strong></h5>
+  <br>
+  <div>
+
+    <div class="left"><h5 style="text-align:justify;">1.1</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{'policy.section1_content1'|translate}}
+      <strong>Triligo</strong>{{'policy.section1_content12'|translate}}</h5></div>
+
+  </div>
+
+  <div>
+
+    <div class="left"><h5 style="text-align:justify;">1.2</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{'policy.section1_content21'|translate}}</h5>
+      <h5 style="text-align:justify;">{{'policy.section1_content22'|translate}}</h5>
+      <h5 style="text-align:justify;">{{'policy.section1_content23'|translate}}</h5></div>
+
+  </div>
+
+  <div>
+
+    <div class="left"><h5 style="text-align:justify;">1.3</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{'policy.section1_content3'|translate}}</h5></div>
+
+  </div>
+
+  <br>
+  <h5><strong>II.</strong></h5>
+  <h5><strong>{{'policy.section2_title'|translate}}</strong></h5>
+  <br>
+  <div >
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+  </div>
+
+  <br>
+  <h5><strong>III.</strong></h5>
+  <h5><strong>{{'policy.section3_title'|translate}}</strong></h5>
+  <br>
+
+  <div *ngFor="let section of 'policy.section3_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+  <br>
+  <h5><strong>IV.</strong></h5>
+  <h5><strong>{{'policy.section4_title'|translate}}</strong></h5>
+  <br>
+
+  <div *ngFor="let section of 'policy.section4_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+  <br>
+  <h5><strong>V.</strong></h5>
+  <h5><strong>{{'policy.section5_title'|translate}}</strong></h5>
+  <br>
+
+  <div *ngFor="let section of 'policy.section5_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+  <br>
+  <h5><strong>VI.</strong></h5>
+  <h5><strong>{{'policy.section6_title'|translate}}</strong></h5>
+  <br>
+
+
+  <div *ngFor="let section of 'policy.section6_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+  <br>
+  <h5><strong>VII.</strong></h5>
+  <h5><strong>{{'policy.section7_title'|translate}}</strong></h5>
+  <br>
+
+  <div *ngFor="let section of 'policy.section7_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+  <br>
+  <h5><strong>VIII.</strong></h5>
+  <h5><strong>{{'policy.section8_title'|translate}}</strong></h5>
+  <br>
+
+  <div *ngFor="let section of 'policy.section8_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+  <br>
+  <h5><strong>IX.</strong></h5>
+  <h5><strong>{{'policy.section9_title'|translate}}</strong></h5>
+  <br>
+
+  <div *ngFor="let section of 'policy.section9_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+  <br>
+  <h5><strong>IX.</strong></h5>
+  <h5><strong>{{'policy.section10_title'|translate}}</strong></h5>
+  <br>
+
+  <div *ngFor="let section of 'policy.section10_content'|translate">
+    <div class="left"><h5 style="text-align:justify;">{{section.order}}</h5></div>
+    <div class="right"><h5 style="text-align:justify;">{{section.content}}</h5></div>
+
+
+    <div class="right" *ngFor="let item_ of section.content_lst">
+      <div class="left"><h5></h5></div>
+      <div class="left"><h5 style="text-align:justify;">{{item_.item_order}}</h5></div>
+      <div class="right"><h5 style="text-align:justify;">{{item_.item}}</h5></div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+<br>
+
+
+
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         
                                         Rozumím
