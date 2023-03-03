@@ -15,12 +15,11 @@ const selectOptions = [
 ];
 
 
-
 export default function App() {
     {/*console.log(data);*/} 
     const onSubmit = (data) => {
 	  
-          axios.post('https://formsubmit.co/aja/stolcml@gmail.com', 
+          axios.post('https://formsubmit.co/ajax/stolcml@gmail.com', 
 	{"name":data.name,
 	 "email":data.email,
 	 "phone":data.phone,
