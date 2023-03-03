@@ -34,10 +34,7 @@ li {
 }
 
 li::before {
-	counter-increment: list-item;
-	content: counter(list-item);
-	font-size: 3rem;
-	font-weight: 700;
+
 	width: 2em;
 	height: 2em;
 	background: black;
@@ -49,12 +46,7 @@ li::before {
 	align-items: center;
 }
 
-li:nth-child(even) {
-	flex-direction: row-reverse;
-	background: lavender;
-	margin-right: -2rem;
-	margin-left: 2rem;
-}
+
 
 div.left {
   box-sizing: border-box; /* <------- required */
