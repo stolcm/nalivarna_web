@@ -1,0 +1,10 @@
+green colors used in the template
+
+ #1abc9c
+alebo
+ rgb 26, 188, 156;
+alebo
+ #15967d 
+alebo
+ #16a085
+atd.

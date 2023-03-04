@@ -16,15 +16,10 @@ const selectOptions = [
 
 
 export default function App() {
-    {/*console.log(data);*/} 
+
     const onSubmit = (data) => {
-	  
-          axios.post('https://formsubmit.co/ajax/stolcml@gmail.com', 
-	{"name":data.name,
-	 "email":data.email,
-	 "phone":data.phone,
-	 "aboutMe":data.aboutMe,
-	 "choice":data.choice.label})
+	 console.log(data); 
+          axios.post('https://formsubmit.co/ajax/stolcml@gmail.com', data)
     .then(response => { alert('Děkujeme! Brzy se vám ozveme!'); 
     
   window.scrollTo(0, 0);
@@ -135,7 +130,7 @@ export default function App() {
               id="selectCheckbox"
               {...register('checkBox', { required: true})}
               
-            /> <label>Souhlasím s</label> <label><a data-bs-toggle="modal" href="#portfolioModal7">Zásady ochrany osobních údajů</a><span className="required">*</span></label></p>
+            /> <label style={{color:"black"}}>Souhlasím s</label> <label><a data-bs-toggle="modal" href="#portfolioModal7">Zásady ochrany osobních údajů</a><span className="required" style={{color:"black"}}>*</span></label></p>
 
 </div>
 </Form.Field>

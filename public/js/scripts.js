@@ -54,13 +54,4 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 
-function onSubmit() {
-  
-  
-  axios.post('https://formsubmit.co/ajax/stolcml@gmail.com',{
-    name: "FormSubmit",
-    message: "I'm from Devro LABS"
-})
-    .then(response => console.log(response))
-     
-}
+
