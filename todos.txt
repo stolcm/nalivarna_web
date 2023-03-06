@@ -1,0 +1,9 @@
+new mail -> new git repo -> new firebase 
+	 -> new facebook -> facebook page
+
+vymysliet meno, adresu, budeme potrebovat cislo?
+
+###
+
+- checkBox -- 1/0
+- reset form after submission
