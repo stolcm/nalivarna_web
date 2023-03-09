@@ -20,10 +20,11 @@ export default function App() {
     const onSubmit = (data) => {
 	 console.log(data); 
           axios.post('https://formsubmit.co/ajax/stolcml@gmail.com', data)
-    .then(response => { alert('Děkujeme! Brzy se vám ozveme!'); 
-    
+    .then(response => { 
+  alert('Děkujeme! Brzy se vám ozveme!'); 
+  reset({name:"", email:"", phone:"", specialRequests:"", choice:"", checkBox:""}) 
   window.scrollTo(0, 0);
-  reset()
+  
 })
    .catch(response=> {alert('Je nám to líto! Něco se pokazilo! Zkuste to znovu.'); })
     
@@ -70,9 +71,9 @@ export default function App() {
 		<Form.Field>
 		    <div className="form-floating mb-3">                    
                     <textarea className="form-control" id="message" type="text" placeholder="Enter your message here..." style={{height: "10rem"}}
-                        {...register("aboutMe")}
+                        {...register("specialRequests")}
                     />
-		    <label>O mně</label>
+		    <label>Speciální požadavky</label>
 		    </div>
                 </Form.Field>
 		
@@ -134,6 +135,7 @@ export default function App() {
 
 </div>
 </Form.Field>
+  
   {errors.checkBox && <p style={{color:"red"}}>Pole Souhlasím s Zásady ochrany osobních údajů je požadováno</p>}  
 
         
