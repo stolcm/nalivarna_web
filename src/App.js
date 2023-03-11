@@ -9,7 +9,7 @@ import Select from "react-select";
 
 const selectOptions = [
   { value: "vse", label: "VŠE" },
-  { value: "czu", label: "ČZU" },
+  { value: "vscht", label: "VŠCHT" },
   { value: "cvut", label: "ČVUT" },
   { value: "mffUk", label: "MFF UK"}
 ];
@@ -114,7 +114,6 @@ export default function App() {
 <select className="form-select" style={{fontSize:"1.4em"}}  {...register('choice', { required: true})}>
   <option value = "" disabled selected> Vybrat školu<span className="required">*</span></option>
   <option value="VŠE">VŠE</option>
-  <option value="ČZU">ČZU</option>
   <option value="VŠCHT">VŠCHT</option>
   <option value="ČVUT">ČVUT</option>
   <option value="MFF UK">MFF UK</option>

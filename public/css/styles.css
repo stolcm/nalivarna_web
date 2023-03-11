@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-	max-width: 600px;
+	max-width: 900px;
 	margin: 0 auto;
 }
 
@@ -29,13 +29,14 @@ li.inf {
 	padding: 1.5rem;
 	border-radius: 1rem;
 	width: calc(100% - 2rem);
+	
 	box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.1);
 }
 
 li.inf::before {
 
 	width: 2em;
-	height: 2em;
+	height: 7em;
 	background: black;
 	flex: 0 0 auto;
 	border-radius: 50%;
